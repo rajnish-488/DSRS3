@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Disease Prediction</title>
+  </head>
+  <body>
+
+   <!--Navbar -->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link active" href="/about">About</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- jumbotron-->
+
+      <div class="jumbotron">
+        <h1 class="display-4">Drug and Disease Prediction</h1>
+        <p class="lead">This is a prediction software which will predict the disease and give the preculation and discription of disease.</p>
+        <hr class="my-4">
+        <p>Ther are the set of symmptoms to predict the problem select the most relavent symmptoms.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        </p>
+      </div>
+
+      <!--prediction section -->
+      <div>
+         <div style="text-align: center;">
+            <h2>The Prediction Section</h2>
+         </div>
+         <br>
+         <br><br>
+
+
+         <form action="/predict" style="text-align:center;" method="post">
+           <label for="cars">Choose Symptoms 1:</label>
+           <select name="ds1" style="width:300px;">
+            <option>Select Symptoms</option>
+             {{dropdown|safe}}
+           </select>
+           <br><br>
+           <label for="cars">Choose Symptoms 2:</label>
+           <select name="ds2" style="width:300px;">
+             <option>Select Symptoms</option>
+             {{dropdown|safe}}
+           </select>
+           <br><br>
+           <label for="cars">Choose Symptoms 3:</label>
+           <select name="ds3" style="width:300px;">
+            <option>Select Symptoms</option>
+             {{dropdown|safe}}
+           </select>
+           <br><br>
+           <label for="cars">Choose Symptoms 4:</label>
+           <select name="ds4" style="width:300px;">
+            <option>Select Symptoms</option>
+             {{dropdown|safe}}
+           </select>
+           <br><br>
+           <label for="cars">Choose Symptoms 5:</label>
+           <select name="ds5" style="width:300px;">
+            <option>Select Symptoms</option>
+             {{dropdown|safe}}
+           </select>
+           <br><br>
+           <label for="cars">Choose Symptoms 6:</label>
+           <select name="ds6" style="width:300px;">
+            <option>Select Symptoms</option>
+             {{dropdown|safe}}
+           </select>
+           <br><br>
+            <button type="submit" class="btn btn-primary">Primary</button>
+         </form>
+         <br>
+         <br>
+
+      </div>
+
+
+      <!-- footer -->
+      <div style="width:100%; height: 100px; background-color: grey; text-align: center; padding: 30px;">
+         <h4>The code page was made by student of IIIT Kalyani</h4>
+         
+      </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
