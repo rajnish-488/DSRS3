@@ -1,5 +1,6 @@
 from flask import Flask ,render_template, request
 import pandas as pd
+from model_predict.predict import *
 
 app = Flask(__name__)
 
@@ -12,17 +13,6 @@ def drop():
 
 dropdown=drop()
 
-def mapdata():
-    df=pd.read_csv("./static/symptoms.csv")
-    map_value={}
-    count=0
-    for x in df["Symptoms"]:
-        map_value[x]=count
-        count=count+1
-
-    return map_value
-
-map_data=mapdata()
 
 @app.route("/")
 def hello_world():
@@ -31,14 +21,16 @@ def hello_world():
 @app.route("/predict", methods =["GET", "POST"])
 def predict():
     if request.method == "POST":
-       S1 = request.form.get("ds1") 
-       S2 = request.form.get("ds2")
-       S3 = request.form.get("ds3") 
-       S4 = request.form.get("ds4") 
-       S5 = request.form.get("ds5") 
-       S6 = request.form.get("ds6") 
+        l=[]
+        l.append(request.form.get("ds1")) 
+        l.append(request.form.get("ds2"))
+        l.append(request.form.get("ds3"))
+        l.append(request.form.get("ds4"))
+        l.append(request.form.get("ds5"))
+        l.append(request.form.get("ds6")) 
+        data=predict_disease(l)
 
-       return "Your Symptoms are "+S1 + ","+S2 + ","+S3 + ","+S4 + ","+S5 + ","+S6 +".D"
+        return "Your Disease is "+data[0] + ","+data[1] + ","+data[2] + ","+data[3]+ ","+data[4] + ","+data[5] +"."
     return render_template('index.html',dropdown=dropdown)
 
 
