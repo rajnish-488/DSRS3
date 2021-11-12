@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Desease prediction</title>
+  </head>
+  <body>
+
+    <!--Navbar -->
+    <div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Disease Predict</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/">Home</a>
+            <a class="nav-item nav-link active" href="/about">About</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+    
+    <div style="text-align:center; padding-left: 200px; padding-right: 200px;padding-top: 50px;">
+         <div >
+            <h3>The Predicted Disease</h3>
+            <h4>{{data[0]}}</h4>
+         </div>
+         <br>
+         <br>
+         <div>
+            <h3>Disease Discription</h3>
+            <h4>{{data[1]}}</h3>
+         </div>
+         <br><br>
+         <div>
+            <h4 style="color: {{data[7]}};">{{data[6]}}</h4>
+         </div>
+         <br><br>
+         <div>
+            <h3>Pecaution To Take</h3><br>
+            <h4>1. {{data[2]}}</h4><br>
+            <h4>2. {{data[3]}}</h4><br>
+            <h4>3. {{data[4]}}</h4><br>
+            <h4>4. {{data[5]}}</h4><br>
+         </div>
+         <div style="margin-bottom: 50px;">
+           <a href="/">
+             <button type="button" class="btn btn-primary">RETURN</button>
+           </a>
+           <br>
+         </div>
+      </div>
+      
+
+      <!-- footer -->
+      <div style="width:100%; height: 100px; background-color: grey; text-align: center; padding: 30px;">
+         <h4>The code page was made by Rajnish Singh, Akash Singh and Harshit Sharma of IIIT Kalyani</h4>
+         
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

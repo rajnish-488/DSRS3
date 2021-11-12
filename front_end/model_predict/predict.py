@@ -29,11 +29,38 @@ def mapdata():
 
 map_data2=mapdata()
 
+def map_weight():
+    df=pd.read_csv("./static/sever.csv")
+    map_weight={}
+    for x,y in zip(df["Symptom"],df["weight"]):
+        x=" "+x
+        map_weight[x]=y
+    return map_weight
+map_weight=map_weight()
+
 
 def predict_disease(l):
-	slist=[0]*131
-	for x in l:
-		if l != "Select Symptoms":
-			slist[map_data2[x]]=1
-	disease=map_data[(np.argmax(model.predict([slist]), axis=-1))[0]]
-	return mapvalue[disease]
+    count=0
+    sumvalue=0
+    slist=[0]*131
+    for x in l:
+        if x != "Select Symptoms":
+            slist[map_data2[x]]=1
+            if x in map_weight:
+                sumvalue=sumvalue+map_weight[x]
+                count=count+1
+
+    disease=map_data[(np.argmax(model.predict([slist]), axis=-1))[0]]
+    out=mapvalue[disease]
+    if(count!=0):
+        level = sumvalue/count
+    if level>0 and level<0.21:
+        out.append("Common Symptoms take general medicine and contact the near by Doctor.")
+        out.append("green")
+    elif level>=0.21 and level<0.49:
+        out.append("Moderate Symptoms, the state can be critical, contact near by Doctor.")
+        out.append("blue")
+    elif level>=0.49 and level<1:
+        out.append("Cretical Symptoms, the worst state, immediatly reach a nearby Hospital.")
+        out.append("red")
+    return out

@@ -13,6 +13,9 @@ def drop():
 
 dropdown=drop()
 
+def dataout(data):
+    return "<div style='text-align:center;'><div ><h2>The Predicted Disease</h2><h3>"+str(data[0])+"</h3></div><br><div><h2>Disease Discription</h2><h3>"+str(data[1])+"</h3></div><br><div><h3>"+str(data[6])+"</h3></div><br><div><h2>Pecaution to take</h2><h3>" +str(data[2])+ "</h3><h3>" + str(data[3]) + "</h3><h3>" + str(data[4]) + "</h3><h3>"+str(data[5])+"</h3></div></div>"
+
 
 @app.route("/")
 def hello_world():
@@ -30,7 +33,7 @@ def predict():
         l.append(request.form.get("ds6")) 
         data=predict_disease(l)
 
-        return "Your Disease is "+data[0] + ","+data[1] + ","+data[2] + ","+data[3]+ ","+data[4] + ","+data[5] +"."
+        return render_template('predict.html',data = data)
     return render_template('index.html',dropdown=dropdown)
 
 
